@@ -8,7 +8,7 @@ def home(request):
 		'posts':  post.objects.all()
 
 	}
-	return render(request, 'blog/home.html' ,  context)
+	return render(request, 'blog/home.html' , context)
 
 def about(request):
 	return render(request, 'blog/about.html')
