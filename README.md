@@ -1,2 +1,3 @@
 # django-blog
-First Blog Post website using Django 3.0
+A full featured Blog posting WEb App using Django 3.0
+
