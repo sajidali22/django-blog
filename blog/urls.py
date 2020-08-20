@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView,UserPostListView
+from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView,UserPostListView, FrontendRenderView
+
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
@@ -12,4 +13,9 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
 ]
 
-# <app>/<model>_<viewtype>.html
+"""urlpatterns += [
+	re_path(r'(?P<path>.*)', FrontendRenderView.as_view(), name='home')
+]
+#django no logner handles 404 errors, frontend does
+
+# <app>/<model>_<viewtype>.html"""

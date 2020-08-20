@@ -10,7 +10,7 @@
 	font-family: 'Lemonada', cursive;
 }
 
-.bg-cover {
+.bg-cover {	
 	margin: 20px;
 	background-size: cover;
 	/*background-color: red;*/
@@ -175,8 +175,8 @@ button.ghost {
 
 .overlay {
 	background: #ff416c;
-	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-	background: linear-gradient(to right, #ff4b2b, #ff416c);
+	background: -webkit-linear-gradient(to right, #28313B, #485461);
+	background: linear-gradient(to right, #28313B, #485461);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

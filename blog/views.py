@@ -5,7 +5,8 @@ from django.views.generic import (ListView,
 		 DetailView,
 		 CreateView,
 		 UpdateView,
-		 DeleteView)
+		 DeleteView,
+		 View)
 from .models import post
 
 # Create your views here.
@@ -74,3 +75,9 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 
 def about(request):
 	return render(request, 'blog/about.html')
+
+
+class FrontendRenderView(View):
+	def get(self, request, *args, **kwargs):
+		return render(request, "pages/home.html", {})
+		
