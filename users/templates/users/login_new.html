@@ -1,0 +1,55 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, User!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body class="boi">
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <!-- Sign up form code -->
+            <form class="forsign">
+                    <h1 class="sh1">Create Account</h1>
+                    <span>Sign up boi</span>
+                    <a class="butsign" href = "{% url 'register' %}">Sign Up</a>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <!--Sign in form code -->
+                <form class = "forsign" method = "POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <h1 class="sh1">Sign in</h1>
+                        <span>Or maybe sign in if ur already a bro</span>
+                            {{ form|crispy }}
+                    </fieldset>
+                    <button class="butsign" type="Submit">Sign In</button>
+                </form>
+        </div>
+        <div class="overlay-container">
+            <!-- Overlay code -->
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="sh1">Welcome back!</h1>
+                    <p class="par">
+                        Login in with your info
+                    </p>
+                    <button class="butsign ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="sh1">Hey there!</h1>
+                    <p class="par">Sign up by entering your details</p>
+                    <button class="butsign ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'users/script.js' %}"></script>
+</body>
+</html>
