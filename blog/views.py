@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import (ListView,
@@ -8,6 +8,7 @@ from django.views.generic import (ListView,
 		 DeleteView,
 		 View)
 from .models import post
+from users.forms import CommentForm
 
 # Create your views here.
 
@@ -80,4 +81,16 @@ def about(request):
 class FrontendRenderView(View):
 	def get(self, request, *args, **kwargs):
 		return render(request, "pages/home.html", {})
-		
+
+def add_comment_to_post(request, pk):
+    posts = get_object_or_404(post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = posts
+            comment.save()
+            return redirect('post-detail', pk=posts.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
