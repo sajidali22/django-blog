@@ -19,15 +19,15 @@
           </div>
       </article>
       <hr>
-      <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+      <a class="btn btn-info" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
       {% for comment in post.comments.all %}
         {% if user.is_authenticated or comment.approved_comment %}
           <div class="comment">
             <div class="date">
               {{ comment.created_date }}
               {% if not comment.approved_comment %}
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">remove</span></a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">ok</a>
+                <a class="btn btn-dark btn-sm" href="{% url 'comment_remove' pk=comment.pk %}">remove</span></a>
+                <a class="btn btn-dark btn-sm" href="{% url 'comment_approve' pk=comment.pk %}">ok</a>
               {% endif %}
             </div>
             <strong>{{ comment.author }}</strong>

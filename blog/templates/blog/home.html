@@ -12,7 +12,7 @@
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
-          <a href="{% url 'post-detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+          <a class = "btn btn-link btn-sm" href="{% url 'post-detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
         </article>
     {% endfor %}
 
