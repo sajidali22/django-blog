@@ -10,6 +10,7 @@
 	font-family: 'Lemonada', cursive;
 }
 
+
 .bg-cover {	
 	margin: 20px;
 	background-size: cover;
@@ -226,3 +227,7 @@ button.ghost {
 .container.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
+
+
+
+/*About page styles*/
