@@ -15,11 +15,14 @@ class post(models.Model):
 	def get_absolute_url(self):
 		return reverse('post-detail', kwargs={'pk': self.pk})
 
+	def approved_comments(self):
+		return self.comments.filter(approved_comment=True)
+
 
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.post', on_delete=models.CASCADE, related_name='comments')
-    author = models.CharField(max_length=200)
+    author = author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
