@@ -1,3 +1,61 @@
+.footer {
+	background: #303036;
+	color: #d3d3d3;
+	height: 400px;
+	position: relative;
+}
+
+.footer .footer-content {
+	border: 1px solid red;
+	height: 350px;
+	display: flex;
+}
+
+
+
+.footer .footer-bottom {
+	background: #343a40;
+	color: #918e8e;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	padding: 10px;
+}
+.name-text {
+	/*text-align: center;*/
+	padding-top: 20px;
+	font-stretch: expanded;
+	font-weight: bold;
+	font-size: 20px;
+	padding-left: 10px;
+}
+.names {
+	padding: 20px;
+}
+
+
+dt {
+	/*transform: scale(10);
+    transition: all 0.3s ease-in-out 0.2s;*/
+    color: white;
+    transition: transform 0.5s;
+}
+
+dt:hover {
+  transform: scaleX(.98);
+  
+}
+
+.under-line{
+	border-bottom: 5px red solid;
+	display: inline;
+
+
+	}
+
 .bg-custom {
 	background-color: purple;
 	position: fixed;
@@ -5,6 +63,7 @@
 	left: 0px;
 	right: 0px;
 }
+
 
 .nav-text {
 	font-family: 'Lemonada', cursive;
@@ -27,6 +86,7 @@
 	font-weight: bold;
 	font-family: times-new-roman;
 }
+
 
 .search-box {
 	/*position: relative;*/
@@ -230,4 +290,4 @@ button.ghost {
 
 
 
-/*About page styles*/
+/*FOOTER*/
