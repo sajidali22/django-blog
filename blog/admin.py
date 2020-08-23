@@ -7,3 +7,10 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(post)
 admin.site.register(Comment)
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('author', 'text', 'post', 'created_date ', 'approved_comment')
+    list_filter = ('active', 'created_date ')
+    search_fields = ('author', 'text')
+    actions = ['approved_comment']
