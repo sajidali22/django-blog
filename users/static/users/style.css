@@ -2,7 +2,7 @@
 	background: #303036;
 	color: #d3d3d3;
 	height: 400px;
-	position: relative;
+	position: absolute;
 }
 
 .footer .footer-content {
