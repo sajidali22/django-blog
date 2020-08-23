@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,22 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sajidalisad22@gmail.com'
 EMAIL_HOST_PASSWORD = 'pthamfzkeiidewmv'
+
+
+
+# export Django_User = 'AKIAY6HW4GQSR6SLKQWA'
+# export Django_Pass = 'i1l0luxhPfcPKokMv5XkIs24aBAKJsa3cM4QhOHr'
+# export Aws_Storage = 'weblogs-django-files'
+
+
+AWS_ACCESS_KEY_ID = 'AKIAY6HW4GQSR6SLKQWA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME= 'weblogs-django-files'
+
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# AWS_QUERYSTRING_AUTH=False 
