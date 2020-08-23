@@ -225,3 +225,10 @@ button.ghost {
 .container.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
+
+.djbut {
+	transition: transform 80ms ease-in;
+	display: flex;
+	padding: 15px 25px;
+	margin-right: 0;
+}
