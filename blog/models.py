@@ -22,7 +22,7 @@ class post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.post', on_delete=models.CASCADE, related_name='comments')
-    author = author = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
@@ -33,3 +33,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+    class Meta:
+    	ordering = ['created_date']
+
+    def __str__(self):
+    	return 'comment {} by {}'.format(self.text, self.author)

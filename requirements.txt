@@ -6,10 +6,19 @@ boto3==1.10.26
 botocore==1.13.50
 certifi==2020.6.20
 chardet==3.0.4
+<<<<<<< HEAD
 colorama==0.4.3
+=======
+coverage==5.2.1
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
 distlib==0.3.1
+dj-database-url==0.5.0
 Django==3.0.6
 django-crispy-forms==1.9.1
+<<<<<<< HEAD
+=======
+django-heroku==0.3.1
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
 django-storages==1.9.1
 docutils==0.15.2
 filelock==3.0.12
@@ -21,8 +30,12 @@ jmespath==0.10.0
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
 Pillow==7.2.0
+<<<<<<< HEAD
 pycodestyle==2.5.0
 pylint==2.4.4
+=======
+psycopg2==2.8.5
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
 python-dateutil==2.8.1
 pytz==2020.1
 requests==2.24.0
@@ -31,5 +44,9 @@ six==1.15.0
 sqlparse==0.3.1
 urllib3==1.25.10
 virtualenv==20.0.26
+<<<<<<< HEAD
 wrapt==1.11.2
+=======
+whitenoise==5.2.0
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
 zipp==3.1.0

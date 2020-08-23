@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0r8yijpy^*&2wk9mut_8da056dpv411xnnixlh(gy#y&!t)7&w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = []
 
@@ -137,6 +138,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sajidalisad22@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'pthamfzkeiidewmv'
 
 
@@ -150,10 +152,24 @@ AWS_ACCESS_KEY_ID = 'AKIAY6HW4GQSR6SLKQWA'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME= 'weblogs-django-files'
 
+ =======
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = 'ap-south-1'
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+ <<<<<<< HEAD
 # AWS_QUERYSTRING_AUTH=False 
+=======
+ALLOWED_HOSTS = ['webloggerproject.herokuapp.com']
+
+django_heroku.settings(locals())
+>>>>>>> 756759fc2dd96650b8311db2ec5d98fad48ab227
