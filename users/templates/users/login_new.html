@@ -29,6 +29,8 @@
                             {{ form|crispy }}
                     </fieldset>
                     <button class="butsign" type="Submit">Sign In</button>
+                    <small>
+                        <a href="{% url 'password_reset' %}">Forgot Password?</a>
                 </form>
         </div>
         <div class="overlay-container">

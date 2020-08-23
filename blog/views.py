@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import (ListView,
@@ -7,7 +7,9 @@ from django.views.generic import (ListView,
 		 UpdateView,
 		 DeleteView,
 		 View)
-from .models import post
+from .models import post, Comment
+from users.forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -80,4 +82,29 @@ def about(request):
 class FrontendRenderView(View):
 	def get(self, request, *args, **kwargs):
 		return render(request, "pages/home.html", {})
-		
+
+def add_comment_to_post(request, pk):
+    posts = get_object_or_404(post, pk=pk)
+    comments = post.comments.filter(approved_comment=True)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = posts
+            comment.save()
+            return redirect('post-detail', pk=posts.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'blog/add_comment_to_post.html', {'form': form})
+
+@login_required
+def comment_approve(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('post-detail', pk=comment.post.pk)
+
+@login_required
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post-detail', pk=comment.post.pk)

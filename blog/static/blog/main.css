@@ -186,3 +186,7 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
