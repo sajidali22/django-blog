@@ -6,8 +6,10 @@ certifi==2020.6.20
 chardet==3.0.4
 coverage==5.2.1
 distlib==0.3.1
+dj-database-url==0.5.0
 Django==3.0.6
 django-crispy-forms==1.9.1
+django-heroku==0.3.1
 django-storages==1.9.1
 docutils==0.15.2
 filelock==3.0.12
@@ -16,6 +18,7 @@ idna==2.10
 importlib-metadata==1.7.0
 jmespath==0.10.0
 Pillow==7.2.0
+psycopg2==2.8.5
 python-dateutil==2.8.1
 pytz==2020.1
 requests==2.24.0
@@ -24,4 +27,5 @@ six==1.15.0
 sqlparse==0.3.1
 urllib3==1.25.10
 virtualenv==20.0.26
+whitenoise==5.2.0
 zipp==3.1.0

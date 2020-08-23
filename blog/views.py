@@ -85,7 +85,6 @@ class FrontendRenderView(View):
 
 def add_comment_to_post(request, pk):
     posts = get_object_or_404(post, pk=pk)
-    comments = post.comments.filter(approved_comment=True)
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
