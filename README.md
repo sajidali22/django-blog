@@ -3,14 +3,14 @@ A full featured Blog posting WEb App using Django 3.0
 
 Visit Website at https://webloggerproject.herokuapp.com
 
-# home page
+# Home page
 ![](images/1.png)
 
-# sign in page
+# Sign in page
 ![](images/2.png)
 
-# registration page
+# Registration page
 ![](images/3.png)
 
-# profile page
+# Profile page
 ![](images/4.png)
